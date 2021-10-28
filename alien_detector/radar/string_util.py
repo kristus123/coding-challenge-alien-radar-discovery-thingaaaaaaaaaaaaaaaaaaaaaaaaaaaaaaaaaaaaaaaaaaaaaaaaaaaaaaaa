@@ -1,4 +1,4 @@
-def find_all(string: str, pattern: str) -> str:
+def find_all(string: str, pattern: str) -> [int]:
 	positions = []
 	starting_position = 0
 	while True:

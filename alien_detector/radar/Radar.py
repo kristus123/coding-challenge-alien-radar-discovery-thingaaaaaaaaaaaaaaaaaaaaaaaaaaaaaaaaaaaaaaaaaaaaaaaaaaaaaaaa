@@ -20,4 +20,4 @@ class Radar:
 				area.append(self._radar_map[p._line + i][p._char_start:p._char_end])
 			return Area(area)
 		except IndexError:
-			return None # The potential alien is not completely visible on the radar.
+			return None # position is outside of radar map

@@ -8,9 +8,7 @@ with open('radar_map.txt', 'r') as r:
 radar = Radar(radar_map)
 alienDetector = AlienDetector(radar)
 
-alienCatalog = AlienCatalog()
-
-for alien in alienCatalog.aliens:
-	for position in alienDetector.find(alien):
+for alien in AlienCatalog().aliens:
+	for position in alienDetector.find_all(alien):
 		if position:
 			print(f"Found {alien} at {position}")

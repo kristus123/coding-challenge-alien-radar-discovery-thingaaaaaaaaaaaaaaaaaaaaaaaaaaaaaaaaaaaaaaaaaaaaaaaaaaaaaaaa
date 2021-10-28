@@ -3,7 +3,7 @@ import textwrap
 from radar import Position
 
 class Alien:
-	def __init__(self, name, danger_level, body: [str]):
+	def __init__(self, name: str, danger_level: str, body: [str]):
 		self._name = name
 		self._danger_level = danger_level 
 		self._body = textwrap.dedent(body).splitlines()
