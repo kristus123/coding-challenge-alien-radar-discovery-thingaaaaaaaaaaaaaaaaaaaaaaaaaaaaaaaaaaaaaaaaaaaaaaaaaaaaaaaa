@@ -1,6 +1,7 @@
 # Alien detection software (classified)
-I have been working in a windows environment (I prefer linux), so i set up the project so that it simply worked for me.
+I have been working in a windows environment (I prefer linux).
 It will probably work fine in other environments as well (though i have not tested).
+
 
 ## setup
 ```shell
