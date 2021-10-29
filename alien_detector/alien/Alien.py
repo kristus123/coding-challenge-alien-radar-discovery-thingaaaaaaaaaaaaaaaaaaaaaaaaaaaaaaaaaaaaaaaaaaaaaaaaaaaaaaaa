@@ -15,8 +15,8 @@ class Alien:
 
 
 	def position_relative_to(self, p: Position) -> Position:
-		return Position(
-			p._line, 
+		return Position( # Look at the comments in Position
+			p._line,
 			p._char_start,
 			p._char_start + len(self._body[0]),
 			len(self._body))

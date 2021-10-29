@@ -13,7 +13,7 @@ def test_occurrence_position_is_found():
 	
 	occurrences = list(Radar(radar_map).find_occurrences("MYSTERIOUS"))
 
-	assert str(occurrences) == str([Position(2, 13)]) # dirty str() hack to avoid having to override __eq__
+	assert occurrences == [Position(2, 13)]
 
 
 def test_no_occurrences_found():
@@ -41,5 +41,4 @@ def test_multiple_occurrences_found():
 	
 	occurrences = list(Radar(radar_map).find_occurrences("X"))
 
-	# dirty str() hack to avoid having to override __eq__
-	assert str(occurrences) == str([Position(1, 16), Position(2, 8), Position(3, 18)])
+	assert occurrences == [Position(1, 16), Position(2, 8), Position(3, 18)]

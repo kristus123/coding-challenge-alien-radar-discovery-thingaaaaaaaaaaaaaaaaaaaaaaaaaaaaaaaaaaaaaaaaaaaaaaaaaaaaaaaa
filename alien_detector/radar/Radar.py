@@ -20,4 +20,8 @@ class Radar:
 				area.append(self._radar_map[p._line + i][p._char_start:p._char_end])
 			return Area(area)
 		except IndexError:
-			return None # position is outside of radar map
+			# position is outside of radar map
+			return None
+			# I would probably use something else than null because returning a null enforces null-checks
+			# and there are better ways of dealing with empty values rather than passing null in my opinion
+			# But returning a null here was easy and it kept me from over-engineering

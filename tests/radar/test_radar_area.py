@@ -59,7 +59,7 @@ def test_given_invalid_input_when_fetching_area_then_return_none():
 	assert area == None
 
 
-@pytest.mark.skip(reason="E    assert  == None - I wonder what is happening here")
+@pytest.mark.skip(reason="E    assert  == None        - I wonder what is happening here")
 def test_given_invalid_input_when_fetching_area_then_return_none():
 	radar_map = """\
 	oooooo
@@ -75,7 +75,6 @@ def test_given_invalid_input_when_fetching_area_then_return_none():
 
 
 
-#@pytest.mark.skip(reason="E    assert  == None - I wonder what is happening here")
 def test_given_line_tail_is_outside_of_radar_map_when_fetching_area_then_return_none():
 	radar_map = """\
 	oooooo

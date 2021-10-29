@@ -32,7 +32,7 @@ def test_position_of_alien_is_correct():
 
 
 def test_no_aliens_found():
-	a = Alien("alien from another galaxy", "Never observed in our galaxy", "*")
+	a = Alien("alien from another galaxy", "Never observed in our galaxy", "<*_*>")
 
 	alien_positions = alienDetector.find_all(a)
 
