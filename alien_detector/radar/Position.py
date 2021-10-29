@@ -6,6 +6,8 @@ In a statically typed language i would solve it by modelling the domain
 to the best of my knowledge.
 
 One class could be named `Position2` while another was named `Position4` or something along those lines
+I could do a similar solution here, but then i would need to change code
+and right now I REALLLLLLYYYY feel the downsides of using a text editor vs an IDE so i will just let it be for now.
 
 """
 
@@ -19,10 +21,12 @@ class Position:
 		self._char_end = char_end
 		self._line_tail = line_tail
 
-		# Also i would not have the instance variables be 'private' (_char_end)
-		# and i would rename them to x1, x2, y1, y2 to keep things consistent.
+		# Also i would not have the instance variables be 'private' (_char_end) (but keeping it as is for above mentioned lazy reasons)
+		
+		# Also i would rename them to x1, x2, y1, y2 to keep things consistent.
+
 		# There are two reasons why
-		# 1. the current names expose the implementation of the Radar, which uses character positions
+		# 1. the current names expose the implementation of the Radar.py, which uses character positions and text
 		# 		- using x1, y1 etc would encapsulate this
 		# 2. Keeping things consistent is a powerful tool often overlooked
 
@@ -31,6 +35,6 @@ class Position:
 		return f"position(X1={self._char_start}, X2={self._char_end} : Y1={self._line}, Y2={self._line_tail})"
 
 	# hack : https://stackoverflow.com/questions/46708659/isinstance-fails-for-a-type-imported-via-package-and-from-the-same-module-direct
-	# Probably because i have (probably) not followed best pracises when it comes to structuring python projects
+	# Probably because i have not followed best pracises when it comes to structuring python and pytest projects
 	def __eq__(s, o):
 		return str(s) == str(o)
