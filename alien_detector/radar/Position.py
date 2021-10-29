@@ -5,12 +5,8 @@ That is something that would absolutely become a slippery slope in the future.
 In a statically typed language i would solve it by modelling the domain
 to the best of my knowledge.
 
-`UnfinishedPosition`* could be turned into a `Position` when `alien_area(...)` is called.
-That would make it impossible for an `UnfinishedPosition` object to be passed into
-`radar.extract_area(p: Position)`.
+One class could be named `Position2` while another was named `Position4` or something along those lines
 
-
-* `UnfinishedPosition` is obviously not the best name
 """
 
 class Position:
