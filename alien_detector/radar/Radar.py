@@ -16,14 +16,14 @@ class Radar:
 	def area(self, p: Position) -> Area:
 		try:
 			area = []
-			for i in range(p._line_tail):
-				area.append(self._radar_map[p._line + i][p._char_start:p._char_end])
+			for y in p.all_y_positions():
+				area.append(self._radar_map[y][p.x1:p.x2])
 			return Area(area)
 		except IndexError:
-			# position is outside of radar map
-			return None
+			return None # position is outside of radar map
+
 			# I would probably use something else than null because returning a null enforces null-checks
 			# and pollutes the inner logic with null-checking
 
-			# There are better ways of dealing with empty values rather than passing null in my opinion
+			# There are better and more descriptive ways of dealing with empty values rather than passing null in my opinion
 			# But returning a null here was easy and it kept me from over-engineering

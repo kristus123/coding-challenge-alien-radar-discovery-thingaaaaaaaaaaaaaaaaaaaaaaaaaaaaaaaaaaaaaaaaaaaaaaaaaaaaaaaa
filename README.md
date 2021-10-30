@@ -2,6 +2,13 @@
 I have been working in a windows environment (I prefer linux).
 It will probably work fine in other environments as well (though i have not tested).
 
+## A word on defensive programming
+There is not much validation to check if x > y or whether values are as expected when passed around.
+The pragmatic solution has been to not focus on this.
+
+if i were to take external input into my domain/project i would think otherwise. 
+an Anti-Corruption layer is a pretty cool concept for this.
+
 
 ## setup
 ```shell

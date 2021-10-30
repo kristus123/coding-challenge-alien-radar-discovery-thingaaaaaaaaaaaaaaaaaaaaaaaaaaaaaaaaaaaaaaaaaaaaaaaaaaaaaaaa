@@ -32,6 +32,27 @@ class Position:
 		# 2. Keeping things consistent is a powerful tool
 
 
+	@property
+	def x1(self):
+		return self._char_start
+
+	@property
+	def x2(self):
+		return self._char_end
+
+	@property
+	def y1(self):
+		return self._line
+
+	@property
+	def y2(self):
+		return self._line_tail
+
+	def all_y_positions(self) -> (int):
+		for i in range(self._line_tail):
+			yield self.y1 + i
+
+
 	"""
 	body: [str] could be its own class to avoid having to rely on 'primitive data types'
 	But i ain't getting paid to do sexy domain modelling tonight so i will leave it be.
