@@ -9,6 +9,9 @@ One class could be named `Position2` while another was named `Position4` or some
 I could do a similar solution here, but then i would need to change code
 and right now I REALLLLLLYYYY feel the downsides of using a text editor vs an IDE so i will just let it be for now.
 
+# Maybe rearrange the parameters if i went for this solution
+Position2(y1, x1)
+Position4(y1, x1, x2, y2)
 """
 
 class Position:
