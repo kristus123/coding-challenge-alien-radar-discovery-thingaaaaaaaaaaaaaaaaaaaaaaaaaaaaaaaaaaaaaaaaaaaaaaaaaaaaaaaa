@@ -12,37 +12,17 @@ and right now I REALLLLLLYYYY feel the downsides of using a text editor vs an ID
 """
 
 class Position:
-	# I would make the parameters line up with the order the values are displayed in __repr__ that would make life much easier
-	# But for now i will just live with it
-	def __init__(self, line, char_start, char_end=None, line_tail=None):
-		self._line = line
-		self._char_start = char_start
-		
-		self._char_end = char_end
-		self._line_tail = line_tail
+	def __init__(self, y1, x1, x2=None, y2=None):
+		self.y1 = y1
+		self.y2 = y2
 
-		# Also i would not have the instance variables be 'private' (_char_end) (but keeping it as is for above mentioned lazy reasons)
-		
-		# Also i would rename them to x1, x2, y1, y2 to keep things consistent.
-		# There are two reasons why
-		# 1. the current names expose the implementation of the Radar.py, which uses character positions and text
-		# 		- using x1, y1 etc would encapsulate this
-		# 2. Keeping things consistent is a powerful tool
-
-
-	@property
-	def x1(self):
-		return self._char_start
-
-
-	@property
-	def x2(self):
-		return self._char_end
+		self.x1 = x1
+		self.x2 = x2
 
 
 	def all_y_positions(self) -> (int):
-		for i in range(self._line_tail):
-			yield self._line + i
+		for i in range(self.y2):
+			yield self.y1 + i
 
 
 	"""
@@ -51,15 +31,15 @@ class Position:
 	"""
 	def relative_to(self, body: [str]):
 		return Position(
-			self._line, 
-			self._char_start, 
-			self._char_start + len(body[0]),
+			self.y1, 
+			self.x1, 
+			self.x1 + len(body[0]),
 			len(body))
 
 
-
 	def __repr__(self):
-		return f"position(X1={self._char_start}, X2={self._char_end} : Y1={self._line}, Y2={self._line_tail})"
+		return f"position(Y1={self.y1}, X1={self.x1} : X2={self.x2}, Y2={self.y2})"
+
 
 	# hack : https://stackoverflow.com/questions/46708659/isinstance-fails-for-a-type-imported-via-package-and-from-the-same-module-direct
 	# Probably because i have not followed best pracises when it comes to structuring python and pytest projects

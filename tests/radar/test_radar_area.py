@@ -12,7 +12,7 @@ def test_specific_area_is_fetched():
 	oooooo
 	""".splitlines()
 	
-	area = Radar(radar_map).area(Position(line=1, char_start=2, char_end=6, line_tail=3))
+	area = Radar(radar_map).area(Position(y1=1, x1=2, x2=6, y2=3))
 
 	assert area == ["----", "----", "----"]
 
@@ -26,7 +26,7 @@ def test_specific_area_is_fetched():
 	ooooooooooooooooooooooooooooo
 	""".splitlines()
 	
-	area = Radar(radar_map).area(Position(line=2, char_start=7, char_end=23, line_tail=1))
+	area = Radar(radar_map).area(Position(y1=2, x1=7, x2=23, y2=1))
 
 	assert area == ["I_ONLY_WANT_THIS"]
 
@@ -40,7 +40,7 @@ def test_given_invalid_input_when_fetching_area_then_return_none():
 	oooooo
 	""".splitlines()
 	
-	area = Radar(radar_map).area(Position(line=200, char_start=0, char_end=2, line_tail=1))
+	area = Radar(radar_map).area(Position(y1=200, x1=0, x2=2, y2=1))
 
 	assert area == None
 
@@ -54,7 +54,7 @@ def test_given_invalid_input_when_fetching_area_then_return_none():
 	oooooo
 	""".splitlines()
 	
-	area = Radar(radar_map).area(Position(line=2, char_start=100, char_end=201, line_tail=1))
+	area = Radar(radar_map).area(Position(y1=2, x1=100, x2=201, y2=1))
 
 	assert area == None
 
@@ -69,7 +69,7 @@ def test_given_invalid_input_when_fetching_area_then_return_none():
 	oooooo
 	""".splitlines()
 	
-	area = Radar(radar_map).area(Position(line=2, char_start=1, char_end=101, line_tail=1))
+	area = Radar(radar_map).area(Position(y1=2, x1=1, x2=101, y2=1))
 
 	assert area == None
 
@@ -84,6 +84,6 @@ def test_given_line_tail_is_outside_of_radar_map_when_fetching_area_then_return_
 	oooooo
 	""".splitlines()
 	
-	area = Radar(radar_map).area(Position(line=2, char_start=1, char_end=2, line_tail=100))
+	area = Radar(radar_map).area(Position(y1=2, x1=1, x2=2, y2=100))
 
 	assert area == None
