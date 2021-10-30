@@ -6,24 +6,16 @@ class Alien:
 	def __init__(self, name: str, danger_level: str, body: [str]):
 		self._name = name
 		self._danger_level = danger_level 
-		self._body = textwrap.dedent(body).splitlines()
+		self.body = textwrap.dedent(body).splitlines()
 
 
 	@property
 	def head(self):
-		return self._body[0]
-
-
-	def position_relative_to(self, p: Position) -> Position:
-		return Position( # Look at the comments in Position
-			p._line,
-			p._char_start,
-			p._char_start + len(self._body[0]),
-			len(self._body))
+		return self.body[0]
 
 
 	def __eq__(self, other) -> bool:
-		return self._body == other
+		return self.body == other
 
 
 	def __repr__(self):

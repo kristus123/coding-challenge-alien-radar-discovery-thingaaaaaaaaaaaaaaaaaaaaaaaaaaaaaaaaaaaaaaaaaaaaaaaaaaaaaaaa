@@ -1,3 +1,5 @@
+from alien_detector.alien import Alien
+
 """
 It is a little shady that there are two uninitialized instance variables.
 That is something that would absolutely become a slippery slope in the future.
@@ -28,7 +30,16 @@ class Position:
 		# There are two reasons why
 		# 1. the current names expose the implementation of the Radar.py, which uses character positions and text
 		# 		- using x1, y1 etc would encapsulate this
-		# 2. Keeping things consistent is a powerful tool often overlooked
+		# 2. Keeping things consistent is a powerful tool
+
+
+	def relative_to(self, body: [str]):
+		return Position(
+			self._line, 
+			self._char_start, 
+			self._char_start + len(body[0]),
+			len(body))
+
 
 
 	def __repr__(self):
