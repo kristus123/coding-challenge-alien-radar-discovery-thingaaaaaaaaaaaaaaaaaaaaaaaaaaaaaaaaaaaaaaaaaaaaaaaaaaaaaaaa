@@ -26,13 +26,16 @@ class Position:
 		# Also i would not have the instance variables be 'private' (_char_end) (but keeping it as is for above mentioned lazy reasons)
 		
 		# Also i would rename them to x1, x2, y1, y2 to keep things consistent.
-
 		# There are two reasons why
 		# 1. the current names expose the implementation of the Radar.py, which uses character positions and text
 		# 		- using x1, y1 etc would encapsulate this
 		# 2. Keeping things consistent is a powerful tool
 
 
+	"""
+	body: [str] could be its own class to avoid having to rely on 'primitive data types'
+	But i ain't getting paid to do sexy domain modelling tonight so i will leave it be.
+	"""
 	def relative_to(self, body: [str]):
 		return Position(
 			self._line, 
