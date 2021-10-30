@@ -1,4 +1,4 @@
-# Alien detection software (classified)
+# Alien detection software
 I have been working in a windows environment (I prefer linux).
 It will probably work fine in other environments as well (though i have not tested).
 
