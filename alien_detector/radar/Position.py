@@ -30,7 +30,9 @@ class Position:
 
 	"""
 	body: [str] could be its own class to avoid having to rely on 'primitive data types'
+	Area.py is already a class for body: [str] that could be used for this intent
 	But i ain't getting paid to do sexy domain modelling tonight so i will leave it be.
+
 	"""
 	def relative_to(self, body: [str]):
 		return Position(
