@@ -1,5 +1,3 @@
-from alien_detector.alien import Alien
-
 """
 It is a little shady that there are two uninitialized instance variables.
 That is something that would absolutely become a slippery slope in the future.
@@ -36,21 +34,15 @@ class Position:
 	def x1(self):
 		return self._char_start
 
+
 	@property
 	def x2(self):
 		return self._char_end
 
-	@property
-	def y1(self):
-		return self._line
-
-	@property
-	def y2(self):
-		return self._line_tail
 
 	def all_y_positions(self) -> (int):
 		for i in range(self._line_tail):
-			yield self.y1 + i
+			yield self._line + i
 
 
 	"""
