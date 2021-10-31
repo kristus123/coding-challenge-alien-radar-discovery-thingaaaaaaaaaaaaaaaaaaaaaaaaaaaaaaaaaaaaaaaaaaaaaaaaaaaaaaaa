@@ -4,7 +4,7 @@ from radar import Area
 It is a little shady that there are two uninitialized instance variables.
 That is something that would absolutely become a slippery slope in the future.
 
-It could be solved by modelling the domain and having the compiler enforce these rules.
+It could be solved by modelling the domain and having the 'compiler' enforce these rules.
 
 One class could be named `Position2` while another was named `Position4` or something along those lines
 I could do a similar solution here, but then i would need to change code
