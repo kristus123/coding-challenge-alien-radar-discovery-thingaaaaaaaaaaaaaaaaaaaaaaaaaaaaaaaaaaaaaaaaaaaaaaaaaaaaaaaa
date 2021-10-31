@@ -9,5 +9,5 @@ class AlienDetector:
 
 	def find_all(self, alien: Alien) -> (Position):
 		for alien_position in [p.relative_to(alien.body) for p in self.radar.find_occurrences(alien.head)]:
-			if self.radar.area(alien_position) == alien:
+			if self.radar.area(alien_position) == alien.body:
 				yield alien_position

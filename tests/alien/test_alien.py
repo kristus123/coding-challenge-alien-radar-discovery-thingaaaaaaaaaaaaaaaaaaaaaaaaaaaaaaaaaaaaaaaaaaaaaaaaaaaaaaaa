@@ -23,11 +23,3 @@ def test_str_value():
 		""")
 
 	assert str(a) == "Billy the alien (very dangerous)"
-
-
-def test_positive_equal_condition():
-	assert Alien("Billy", "A", ":^D") == Alien("Mandy", "B", ":^D")
-
-
-def test_negative_equal_condition():
-	assert Alien("Billy", "A", ">:(") != Alien("Mandy", "B", ":^D")
