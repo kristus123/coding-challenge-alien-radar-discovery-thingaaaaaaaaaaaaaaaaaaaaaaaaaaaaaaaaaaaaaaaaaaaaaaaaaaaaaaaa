@@ -5,7 +5,7 @@ class AlienCatalog:
 		self.aliens = [
 			Alien(
 				"Sneaky alien",
-				"high-level treat",
+				"high-level threat",
 				"""\
 					--o-----o--
 					---o---o---
@@ -18,7 +18,7 @@ class AlienCatalog:
 				"""),
 			Alien(
 				"Slow alien",
-				"low-level treat",
+				"low-level threat",
 				"""\
 					---oo---
 					--oooo--

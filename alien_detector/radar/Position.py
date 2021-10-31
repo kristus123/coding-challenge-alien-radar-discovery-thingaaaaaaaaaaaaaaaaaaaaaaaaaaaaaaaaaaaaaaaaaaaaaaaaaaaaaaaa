@@ -1,17 +1,14 @@
+from radar import Area
+
 """
 It is a little shady that there are two uninitialized instance variables.
 That is something that would absolutely become a slippery slope in the future.
 
-In a statically typed language i would solve it by modelling the domain
-to the best of my knowledge.
+It could be solved by modelling the domain and having the compiler enforce these rules.
 
 One class could be named `Position2` while another was named `Position4` or something along those lines
 I could do a similar solution here, but then i would need to change code
 and right now I REALLLLLLYYYY feel the downsides of using a text editor vs an IDE so i will just let it be for now.
-
-# Maybe rearrange the parameters if i went for this solution
-Position2(y1, x1)
-Position4(y1, x1, x2, y2)
 """
 
 class Position:
@@ -28,18 +25,8 @@ class Position:
 			yield self.y1 + i
 
 
-	"""
-	body: [str] could be its own class to avoid having to rely on 'primitive data types'
-	Area.py is already a class for body: [str] that could be used for this intent
-	But i ain't getting paid to do sexy domain modelling tonight so i will leave it be.
-
-	"""
-	def relative_to(self, body: [str]):
-		return Position(
-			self.y1, 
-			self.x1, 
-			self.x1 + len(body[0]),
-			len(body))
+	def relative_to(self, area: Area):
+		return Position(self.y1, self.x1, self.x1 + len(area.head), area.length)
 
 
 	def __repr__(self):

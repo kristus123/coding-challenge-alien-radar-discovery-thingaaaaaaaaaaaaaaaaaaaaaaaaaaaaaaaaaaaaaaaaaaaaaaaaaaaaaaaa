@@ -1,5 +1,5 @@
 from alien_detector.alien import Alien
-from alien_detector.radar import Position
+from alien_detector.radar import Position, Area
 
 
 def test_equal_condition():
@@ -12,7 +12,7 @@ def test_equal_condition():
 
 def test_position_area_equal_to_size_of_body():
 
-	position = Position(1, 5).relative_to(["___", "o-o", "v-v"])
+	position = Position(1, 5).relative_to(Area(["___", "o-o", "v-v"]))
 
 	assert position == Position(1, 5, 8, 3)
 

@@ -24,6 +24,7 @@ class Radar:
 
 			# I would probably use something else than null because returning a null enforces null-checks
 			# and pollutes the inner logic with null-checking
+			# I am not a fan of breaching the semantic encapsulaion.
 
 			# There are better and more descriptive ways of dealing with empty values rather than passing null in my opinion
 			# But returning a null here was easy and it kept me from over-engineering
