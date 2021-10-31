@@ -23,7 +23,7 @@ class Radar:
 			return None # position is outside of radar map
 
 			# I would probably use something else than null because returning a null enforces null-checks
-			# and pollutes the inner logic with null-checking
+			# and pollutes the inner logic with null-checking.
 			# I am not a fan of breaching the semantic encapsulaion.
 
 			# There are better and more descriptive ways of dealing with empty values rather than passing null in my opinion
